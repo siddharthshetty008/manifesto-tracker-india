@@ -1,0 +1,30 @@
+# Node / web scaffolding (if added later)
+node_modules/
+.next/
+dist/
+build/
+.vercel/
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+
+# Python (if scripts added)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Large raw sources — track only processed/structured data
+data/raw/**/*.pdf
+data/raw/parliament/

@@ -1,0 +1,14 @@
+## SOURCE: tutorial.gst.gov.in/downloads/news/monthly_gst_data_for_mar_2026_for_publishing_final.pdf
+## VERIFIED VIA: taxguru.in/goods-and-service-tax/gross-net-gst-revenue-collections-month-march-2026.html
+## TITLE: GST Gross and Net Collections FY 2025-26 (April 2025 - March 2026)
+## PERIOD: Full Year FY 2025-26
+## UNIT: Rs in Crores
+## NOTES: Annual totals verified. State-wise data is SGST pre-settlement only (from cleartax.in).
+## STATUS: Needs cross-verification against official GSTN PDF when parseable.
+
+category,component,monthly_mar25,monthly_mar26,monthly_growth_pct,yearly_fy25,yearly_fy26,yearly_growth_pct
+A3_Gross,CGST,38145,40549,,413776,444309,
+A3_Gross,SGST,49891,53268,,516448,551302,
+A3_Gross,IGST,95853,106246,,1125335,1231485,
+A3_Gross,TOTAL,196141,200064,8.8,2208861,2227096,8.3
+C3_Net,TOTAL,,,,,1934766,

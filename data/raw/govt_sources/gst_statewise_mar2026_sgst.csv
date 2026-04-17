@@ -1,0 +1,45 @@
+## SOURCE: cleartax.in/s/gst-collection-march-2026 citing GSTN official data
+## TITLE: State-wise SGST (Pre-Settlement) March 2026
+## NOTE: This is SGST pre-settlement ONLY, not total domestic GST
+## NOTE: Total domestic GST by state requires the official GSTN PDF
+## UNIT: Rs in Crores
+
+state,mar_25,mar_26,growth_pct
+Jammu and Kashmir,257,207,-20
+Himachal Pradesh,225,244,9
+Punjab,752,888,18
+Chandigarh,67,67,0
+Uttarakhand,527,458,-13
+Haryana,2011,2040,1
+Delhi,1541,1583,3
+Rajasthan,2049,2239,9
+Uttar Pradesh,3207,3345,4
+Bihar,1574,1758,12
+Sikkim,33,54,64
+Arunachal Pradesh,83,80,-3
+Nagaland,36,39,8
+Manipur,28,41,46
+Mizoram,23,33,39
+Tripura,84,110,31
+Meghalaya,85,64,-25
+Assam,694,592,-15
+West Bengal,2147,2201,3
+Jharkhand,902,987,9
+Odisha,2039,2174,7
+Chhattisgarh,1304,1073,-18
+Madhya Pradesh,1417,1421,0
+Gujarat,4246,4450,5
+Dadra and Nagar Haveli and Daman and Diu,60,70,16
+Maharashtra,10926,12752,17
+Karnataka,4178,4746,14
+Goa,229,243,6
+Lakshadweep,1,2,42
+Kerala,1265,1373,9
+Tamil Nadu,4565,4195,-8
+Puducherry,49,48,-1
+Andaman and Nicobar Islands,21,32,58
+Telangana,1822,2168,19
+Andhra Pradesh,1399,1416,1
+Ladakh,22,18,-16
+Other Territory,21,57,174
+Grand Total,49891,53268,7

@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0.0",
+  "total_categories": 14,
+  "categories": [
+    {
+      "id": "GOV",
+      "name": "Governance & Anti-Corruption",
+      "description": "Lokpal, e-governance, transparency, black money, administrative reform, digitization of government, accountability, minimum government maximum governance",
+      "manifesto_sections": [
+        "Attend the Imminent > Corruption",
+        "Attend the Imminent > Black Money",
+        "Attend the Imminent > Decision and Policy Paralysis",
+        "Attend the Imminent > Poor Delivery",
+        "Attend the Imminent > Credibility Crisis",
+        "Reform the System > Good Governance",
+        "Reform the System > India First",
+        "Reform the System > Open Government and Accountable Administration",
+        "Reform the System > E-Governance",
+        "Reform the System > Institutional Reform > Administrative"
+      ],
+      "keywords": ["Lokpal", "corruption", "e-governance", "digital", "transparency", "accountability", "black money", "governance"]
+    },
+    {
+      "id": "ECON",
+      "name": "Economy & Finance",
+      "description": "GDP growth, fiscal discipline, taxation, GST, FDI, banking reform, NPAs, trade, exports, savings, investment climate",
+      "manifesto_sections": [
+        "Economic Revival",
+        "Economic Revival > NPAs",
+        "Economic Revival > Taxation",
+        "Economic Revival > Foreign Direct Investment",
+        "Services > Business and Trade"
+      ],
+      "keywords": ["GDP", "fiscal", "tax", "GST", "FDI", "banking", "NPA", "economy", "trade", "exports", "savings", "investment"]
+    },
+    {
+      "id": "AGRI",
+      "name": "Agriculture & Rural Development",
+      "description": "Farming, irrigation, crop insurance, APMC reform, organic farming, MSP, food processing, rural infrastructure, land acquisition policy",
+      "manifesto_sections": [
+        "Economic Revival > Agriculture",
+        "Widen the Platform > Rural Areas"
+      ],
+      "keywords": ["agriculture", "farmer", "irrigation", "crop", "APMC", "organic", "rural", "MSP", "food processing", "land"]
+    },
+    {
+      "id": "IND",
+      "name": "Industry & Employment",
+      "description": "Manufacturing, MSMEs, labor laws, ease of business, job creation, cooperatives, handicrafts, artisans, Make in India concept",
+      "manifesto_sections": [
+        "Attend the Imminent > Employment and Entrepreneurship",
+        "Economic Revival > Industry",
+        "Economic Revival > Industry > Manufacturing",
+        "Economic Revival > Industry > MSMEs",
+        "Economic Revival > Industry > Cooperative Sector",
+        "Economic Revival > Industry > Handicrafts",
+        "Economic Revival > Industry > Artisans",
+        "Economic Revival > Labour Force"
+      ],
+      "keywords": ["manufacturing", "MSME", "industry", "employment", "labor", "business", "cooperative", "job", "entrepreneur"]
+    },
+    {
+      "id": "DEF",
+      "name": "Defence & Security",
+      "description": "Military modernization, OROP, border security, terrorism, NIA, nuclear programme, war memorial, defence production, DRDO, veterans",
+      "manifesto_sections": [
+        "Secure Indians > Internal Security",
+        "Secure Indians > External Security",
+        "Secure Indians > Defence Production",
+        "Secure Indians > Independent Strategic Nuclear Programme"
+      ],
+      "keywords": ["defence", "military", "one rank one pension", "border", "terrorism", "NIA", "nuclear", "armed forces", "DRDO", "veterans", "war memorial", "NCC"]
+    },
+    {
+      "id": "HEALTH",
+      "name": "Healthcare & Sanitation",
+      "description": "AIIMS, Swachh Bharat, National Health Assurance, AYUSH, sanitation, drinking water, malnutrition, mosquito control, eHealth",
+      "manifesto_sections": [
+        "Leap Forward > Health Services"
+      ],
+      "keywords": ["health", "AIIMS", "Swachh", "sanitation", "AYUSH", "hospital", "malnutrition", "drinking water", "toilet", "medicine"]
+    },
+    {
+      "id": "EDU",
+      "name": "Education & Skills",
+      "description": "School reform, higher education, vocational training, National Education Policy, MOOC, skill mapping, teachers, research, universities",
+      "manifesto_sections": [
+        "Leap Forward > Education > School Education",
+        "Leap Forward > Education > Higher and Professional Education",
+        "Leap Forward > Education > Vocational Training",
+        "Leap Forward > Skills"
+      ],
+      "keywords": ["education", "school", "university", "skill", "teacher", "MOOC", "vocational", "research", "literacy", "training"]
+    },
+    {
+      "id": "INFRA",
+      "name": "Infrastructure",
+      "description": "Highways, railways, bullet train, ports, airports, waterways, housing, optical fibre, urban development, next generation infrastructure",
+      "manifesto_sections": [
+        "Physical Infrastructure",
+        "Physical Infrastructure > Next Generation Infrastructure",
+        "Physical Infrastructure > Transport",
+        "Physical Infrastructure > Railway",
+        "Economic Revival > Housing",
+        "Widen the Platform > Urban Areas"
+      ],
+      "keywords": ["highway", "railway", "bullet train", "port", "airport", "housing", "optical fibre", "infrastructure", "road", "waterway"]
+    },
+    {
+      "id": "ENERGY_ENV",
+      "name": "Energy & Environment",
+      "description": "Solar, coal, nuclear energy, renewables, Himalayas, forests, wildlife, climate change, pollution, clean rivers, natural resources",
+      "manifesto_sections": [
+        "Physical Infrastructure > Energy",
+        "Flora, Fauna and Environment",
+        "Flora, Fauna and Environment > The Himalayas",
+        "Flora, Fauna and Environment > Natural & National Resources"
+      ],
+      "keywords": ["solar", "energy", "coal", "nuclear", "renewable", "Himalaya", "forest", "wildlife", "climate", "pollution", "river", "environment"]
+    },
+    {
+      "id": "SOCIAL",
+      "name": "Social Justice & Welfare",
+      "description": "SC/ST/OBC welfare, tribal development, minorities, poverty alleviation, food security, PDS, senior citizens, disabled persons",
+      "manifesto_sections": [
+        "Widen the Platform > Poor and Marginalized",
+        "Widen the Platform > Food Security",
+        "Widen the Platform > SCs, STs, OBCs and Other Weaker Sections",
+        "Widen the Platform > Minorities",
+        "Widen the Platform > Neo-Middle Class",
+        "Leap Forward > Social Security",
+        "Leap Forward > Senior Citizens",
+        "Leap Forward > Specially Abled"
+      ],
+      "keywords": ["SC", "ST", "OBC", "tribal", "minority", "poverty", "food security", "PDS", "senior citizen", "disabled", "welfare"]
+    },
+    {
+      "id": "WOMEN_CHILD",
+      "name": "Women & Children",
+      "description": "Beti Bachao Beti Padhao, women safety, 33% reservation, child welfare, girl child education, acid attack fund, Anganwadi, rape laws",
+      "manifesto_sections": [
+        "Leap Forward > Women",
+        "Leap Forward > Children"
+      ],
+      "keywords": ["women", "girl child", "Beti Bachao", "reservation", "rape", "acid attack", "child", "Anganwadi", "safety"]
+    },
+    {
+      "id": "YOUTH_SPORTS",
+      "name": "Youth & Sports",
+      "description": "Youth programmes, sports academies, student loans, incubation, entrepreneurship, sports talent search, career paths for sportspersons",
+      "manifesto_sections": [
+        "Leap Forward > Youth",
+        "Leap Forward > Promotion of Sports"
+      ],
+      "keywords": ["youth", "sports", "student", "incubation", "entrepreneurship", "talent", "sportsperson"]
+    },
+    {
+      "id": "FOREIGN",
+      "name": "Foreign Policy",
+      "description": "SAARC, BRICS, neighbourhood policy, NRIs/PIOs, soft power, diplomacy, Brand India, 5 T's, persecuted Hindus, G20, ASEAN",
+      "manifesto_sections": [
+        "Foreign Relations"
+      ],
+      "keywords": ["foreign", "SAARC", "BRICS", "diplomacy", "NRI", "neighbourhood", "soft power", "ASEAN", "G20"]
+    },
+    {
+      "id": "CULTURE",
+      "name": "Cultural Heritage",
+      "description": "Ram Mandir, Uniform Civil Code, cow protection, Ganga cleanup, heritage sites, Indian languages, Ram Setu, pilgrimage centres",
+      "manifesto_sections": [
+        "Cultural Heritage",
+        "Uniform Civil Code"
+      ],
+      "keywords": ["Ram Mandir", "UCC", "Uniform Civil Code", "cow", "Ganga", "heritage", "language", "temple", "pilgrimage"]
+    }
+  ],
+  "cross_cutting_tags": [
+    {
+      "id": "TECHNOLOGY",
+      "name": "Technology & Digital",
+      "description": "IT, digital initiatives, e-governance, broadband, cyber security — applied across multiple primary categories"
+    },
+    {
+      "id": "FEDERALISM",
+      "name": "Federalism & Decentralization",
+      "description": "Centre-state relations, panchayat empowerment, regional development, Northeast, J&K, smaller states"
+    },
+    {
+      "id": "WATER",
+      "name": "Water Security",
+      "description": "Irrigation, river linking, drinking water, desalination, groundwater — spans AGRI, HEALTH, INFRA"
+    }
+  ]
+}

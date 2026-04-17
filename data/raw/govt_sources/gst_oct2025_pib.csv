@@ -1,0 +1,38 @@
+## SOURCE: static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc2025113683701.pdf
+## TITLE: PIB Backgrounder - GST Revenue Soars in October 2025
+## DATE: November 03, 2025
+## PIB REFERENCES: PRID-2180743, PRID-2010615
+## RAW DATA SOURCE: tutorial.gst.gov.in/downloads/news/net_revvenue_gst_oct_2025.pdf
+## UNIT: Rs in Crores
+
+category,component,oct_2024,oct_2025,monthly_growth_pct,ytd_oct24,ytd_oct25,ytd_growth_pct
+A1_Domestic,CGST,33821,36547,,237373,258364,
+A1_Domestic,SGST,41864,45134,,294365,320425,
+A1_Domestic,IGST,54878,55647,,351963,383000,
+A1_Domestic,CESS,11688,7724,,81437,78266,
+A1_Domestic,TOTAL,142251,145052,2.0,965138,1040055,7.8
+A2_Imports,IGST,44233,50796,,302524,343423,
+A2_Imports,CESS,863,88,,6779,5889,
+A2_Imports,TOTAL,45096,50884,12.84,309303,349312,12.9
+A3_Gross,CGST,33821,36547,,237373,258364,
+A3_Gross,SGST,41864,45134,,294365,320425,
+A3_Gross,IGST,99111,106443,,654488,726423,
+A3_Gross,CESS,12550,7812,,88216,84154,
+A3_Gross,TOTAL,187346,195936,4.6,1274442,1389367,9.0
+B3_Total_Refund,TOTAL,10484,13260,,,
+C3_Net_Total,TOTAL,168041,169002,0.6,,
+
+## KEY TAKEAWAYS (from PIB):
+## - Gross GST collections in October 2025 amount to Rs 1,95,936 crores
+## - A year-on-year monthly growth of 4.6%
+## - Gross Domestic GST revenue grew by 2.0%
+## - Total Net GST revenue for October 2025 stands at Rs 1,69,002 crore
+## - Total Net GST revenue is 0.6% higher (monthly) and 7.1% higher (yearly)
+## - Maharashtra, Karnataka, Gujarat, Tamil Nadu, and Haryana together contributed over 40% of total GST revenue
+
+## COMPONENT SNAPSHOT (Table 2 from PIB):
+## CGST: Rs 36,547 crore
+## SGST: Rs 45,134 crore
+## IGST: Rs 1,06,443 crore
+## Cess: Rs 7,812 crore
+## Total: Rs 1,95,936 crore

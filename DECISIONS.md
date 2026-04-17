@@ -101,4 +101,39 @@ Pre-registered decisions, predictions, and stop conditions. **Append-only. No ed
 
 ---
 
+## D06: Research-first before any implementation
+**Date:** 2026-04-16
+**Phase:** Phase 0
+**Decision:** Before drafting any promise entry, scaffolding any site, or writing any code, produce [docs/research-synthesis.md](docs/research-synthesis.md) and [docs/success-criteria.md](docs/success-criteria.md). Ground all phase-exit criteria in what the published CPET literature treats as credibility signals — not ML metrics, not page-view counts.
+**Alternatives considered:**
+- Start with `promises/001-gst.json` drafting immediately. Rejected: would repeat M1 (method before goal) and M3 (measurement before validation).
+- Full CPP methodology adoption (2-coder κ ≥ 0.7). Rejected: infeasible for solo project; instead document the gap and our compensating protocol.
+**Prediction:** Once firmly defined, success criteria will expose Phase 1–3 exit conditions in PLAN.md as too soft. Next PLAN.md revision will tighten them.
+**Falsification:** If after reading published criteria, the project's current plan already satisfies them, the research-first step was unnecessary. (Predicted outcome: current plan does NOT satisfy them; publication rule, contamination probe, and selection log are all missing.)
+**Stop:** If research-synthesis.md cannot produce clear success criteria (i.e., the literature is genuinely silent on how to measure solo-coder tracker credibility), fall back to PolitiFact-only methodology with explicit methodology statement.
+**Dependencies:** D01, D02, D03, D05.
+**Review:** End of Phase 0 / start of Phase 1.
+
+---
+
+## D07: Phase-exit criteria bound to success-criteria.md
+**Date:** 2026-04-16
+**Phase:** Phase 0
+**Decision:** PLAN.md phase-exit criteria will be tightened to reference the falsifiable checks in [docs/success-criteria.md](docs/success-criteria.md):
+- Phase 1 exit ⇒ SC#2 (evidence traceability) + SC#10 (publication rule) pass for 1 promise.
+- Phase 2 exit ⇒ SC#1 (selection log) + SC#2 + SC#5 (contestability) + SC#10 for 5 promises; SC#8 (contamination probe) for every drafted promise.
+- Phase 3 exit ⇒ SC#3 (distribution non-degeneracy) + SC#4 (breadth) + SC#6 (update discipline) measurable.
+- Phase 4 exit ⇒ SC#9 (external trust signal) begins measurement.
+- Phase 5 exit ⇒ full SC evaluation drives continue/pivot/retire decision.
+**Alternatives considered:**
+- Keep soft phase exits ("URL resolves", "5 promises live"). Rejected: optimizes for shipping over credibility.
+- Don't bind PLAN.md to success-criteria.md (keep them separate). Rejected: allows silent drift between what we measure and what we ship.
+**Prediction:** Phase 1 will take longer than the original estimate because SC#10 (publication rule) is 8 checks per promise; Phase 1 exit requires all 8 to pass on the first promise.
+**Falsification:** If a promise is rendered publicly before all SC#10 checks pass, this decision has been violated.
+**Stop:** If any phase exit becomes permanently unachievable (e.g., contamination probe script cannot be built), re-open the criterion for revision via new DECISIONS entry.
+**Dependencies:** D06.
+**Review:** After Phase 1 exit — confirm tightened criteria were feasible.
+
+---
+
 <!-- Future entries go here. Append only. -->

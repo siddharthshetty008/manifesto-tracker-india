@@ -28,3 +28,10 @@ Thumbs.db
 # Large raw sources — track only processed/structured data
 data/raw/**/*.pdf
 data/raw/parliament/
+
+# Per-run artifacts (committed selectively, not en masse)
+scripts/_runs/
+
+# Draft selection log — machine-generated, awaits human review before
+# promotion to docs/selection-log.md (which IS committed)
+docs/selection-log.draft.md

@@ -2,8 +2,9 @@
 
 Every entry in `promises/` conforms to this schema. Breaking changes bump the major version.
 
-**Current schema version:** 1.1
+**Current schema version:** 1.2
 **Changelog:**
+- v1.2 (2026-05-01): Added `verdict_confidence` rubric (D08) and `provenance.self_recode_date` + `provenance.self_recode_agreement` + `provenance.contamination_probe` fields. Reason: audit-driven hardening of single-coder reliability.
 - v1.1 (2026-04-16): Aligned `verdict` enum with PolitiFact 6-state model + added `unverifiable`. Reason: interoperability with established promise trackers (see docs/prior-art.md).
 - v1.0 (2026-04-16): Initial version with CPP-informed classification.
 
@@ -57,7 +58,15 @@ Every entry in `promises/` conforms to this schema. Breaking changes bump the ma
     "drafted_by": "claude-opus-4-7",
     "verified_by": "human:siddharth",
     "verified_on": "2026-04-16",
-    "review_count": 1
+    "review_count": 1,
+    "self_recode_date": "2026-04-23",
+    "self_recode_agreement": true,
+    "contamination_probe": {
+      "model": "claude-haiku-4-5",
+      "ran_on": "2026-04-15",
+      "flagged": true,
+      "note": "Model recalled GST launch date and amendment number from training; drafting prompt forced source-only grounding."
+    }
   }
 }
 ```
@@ -120,9 +129,19 @@ Every entry in `promises/` conforms to this schema. Breaking changes bump the ma
 
 | Field | Values / Notes |
 |---|---|
-| `verdict_confidence` | `high`, `medium`, `low` — human-assessed |
+| `verdict_confidence` | `high`, `medium`, `low` — see rubric below |
 | `summary` | 1–3 sentences explaining the verdict |
 | `nuance` | Caveats, contested facets, Centre–State tensions, null if none |
+
+#### `verdict_confidence` rubric (D08)
+
+| Level | Criteria (ALL must hold) |
+|---|---|
+| `high` | ≥3 Tier-1 sources directly support the verdict; AND no contested interpretation among consulted sources; AND no key sub-claim relies on Tier-2 or Tier-3 |
+| `medium` | 1–2 Tier-1 sources OR contested interpretation among Tier-1 sources OR a key sub-claim relies on Tier-2 |
+| `low` | Tier-1 evidence is partial or indirect; verdict requires inference; Tier-2/3 supplement is load-bearing |
+
+**Mandatory:** confidence `medium` or `low` requires `nuance` filled with the counter-case (enforced by SC#5).
 
 ### `evidence` (array of objects)
 
@@ -155,6 +174,18 @@ Every entry in `promises/` conforms to this schema. Breaking changes bump the ma
 | `verified_by` | `human:<name>` — required for public publication |
 | `verified_on` | ISO date |
 | `review_count` | Incremented on each verified revision |
+| `self_recode_date` | ISO date ≥7 days after drafting; date of adversarial self-recode (D08, SC#7) |
+| `self_recode_agreement` | bool — did the recode produce the same verdict as the original draft? |
+| `contamination_probe` | Object with `model`, `ran_on`, `flagged` (bool), `note`. SC#8. |
+
+#### `provenance.contamination_probe` object
+
+| Field | Notes |
+|---|---|
+| `model` | Model used for the closed-book probe (default: `claude-haiku-4-5`) |
+| `ran_on` | ISO date the probe ran |
+| `flagged` | `true` if model returned a non-`unknown` verdict with any specific fact (date, number, name) |
+| `note` | One-line description of what the model recalled and how the drafting prompt was hardened |
 
 ## Publication rule
 

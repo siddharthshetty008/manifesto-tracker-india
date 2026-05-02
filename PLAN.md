@@ -31,7 +31,8 @@ Research grounded; governance files written; success criteria defined; archive p
 Apply the selection criteria to the 581 raw extractions. Produce a documented shortlist.
 
 **Deliverables:**
-- `docs/selection-log.md` — for every entry in [data/processed/promises.json](data/processed/promises.json), one of: `included`, `excluded-untestable`, `excluded-rhetorical`, `excluded-duplicate`, `pending-research` — each with a one-sentence rationale.
+- `scripts/classify_promises.py` — Claude-assisted first-pass classifier. Input: a row from `data/processed/promises.json`. Output: candidate status (`included` / `excluded-untestable` / `excluded-rhetorical` / `excluded-duplicate` / `pending-research`) + one-sentence rationale. Source-grounded prompt; only the manifesto text + the row may be used. Human reviews and approves every row before it lands in the selection log.
+- `docs/selection-log.md` — for every entry in [data/processed/promises.json](data/processed/promises.json), final status (human-approved) + rationale.
 - `promises/` folder holding shortlisted IDs (empty JSON stubs referencing the raw extraction they derive from).
 
 **Exit criteria (falsifiable):**
@@ -48,20 +49,21 @@ Apply the selection criteria to the 581 raw extractions. Produce a documented sh
 Draft 2 promises end-to-end: 001-gst.json and 002-orop.json. These are the stress test — if the schema or workflow is wrong, it shows here.
 
 **Deliverables:**
-- `scripts/contamination_probe.py` — runs base Claude closed-book on a promise text; logs output to promise's `provenance.contamination_probe` (SC#8).
-- `scripts/draft_promise.py` — Claude-API drafting: input = (promise text, seed sources, date window); output = draft JSON. Source-grounded prompt; must cite only provided sources.
-- `docs/VERIFICATION_CHECKLIST.md` — the 8-item publication-rule walkthrough for a human verifier.
-- `promises/001-gst.json` — drafted, verified, meets SC#10.
-- `promises/002-orop.json` — drafted, verified, meets SC#10.
+- `scripts/contamination_probe.py` — implements the D08 spec: `claude-haiku-4-5` closed-book, structured prompt, threshold-based flagging, output written to `provenance.contamination_probe`.
+- `scripts/draft_promise.py` — Claude-API drafting: input = (promise text, seed sources, date window); output = draft JSON. Source-grounded prompt; must cite only provided sources. Drafting model + effort fixed per D08.
+- `docs/VERIFICATION_CHECKLIST.md` — the publication-rule walkthrough for a human verifier (covers SC#10's 8 + 2 D08 items: self-recode, contamination-probe).
+- `promises/001-gst.json` — drafted, verified, self-recoded after ≥7 days, meets SC#10.
+- `promises/002-orop.json` — drafted, verified, self-recoded after ≥7 days, meets SC#10.
 
 **Exit criteria (falsifiable):**
 - SC#2 (evidence traceability) passes on both.
 - SC#5 (contestability) passes on both — each entry has `nuance` with counter-case if `verdict_confidence` is medium/low.
+- SC#7 (single-coder mitigation): adversarial self-recode logged for both with `self_recode_date` ≥7 days after draft.
 - SC#8 (contamination probe) ran on both; result logged in provenance.
 - SC#10 (8-item publication rule) passes on both.
-- Schema v1.1 survived without breaking changes. If changes were needed: v1.2 bumped + DECISIONS entry + migration.
+- Schema v1.2 survived without breaking changes. If changes were needed: v1.3 bumped + DECISIONS entry + migration.
 
-**Prediction (DECISIONS.md D02):** schema needs 1–2 revisions. More than 3 structural revisions → goal ambiguous, return to Phase 0.
+**Prediction (DECISIONS.md D02 + D08):** schema needs 0–1 additional revisions. Self-recode agreement on the 2-promise pilot is ≥80%; if <80%, the verdict-confidence rubric is too vague.
 
 ---
 
@@ -94,6 +96,7 @@ Build the static site that renders the 25+ promises. Not before.
 - Build pipeline: reads `promises/*.json`, generates detail pages + list page + methodology page.
 - Deploy to Cloudflare Pages.
 - Public URL (custom domain optional).
+- Discoverability: `sitemap.xml`, `robots.txt`, OpenGraph + Twitter card meta tags on every page.
 
 **Exit criteria (falsifiable):**
 - Public URL resolves.
@@ -101,6 +104,7 @@ Build the static site that renders the 25+ promises. Not before.
 - Build fails (CI) if any published entry has a non-resolving `source_url` (automated check).
 - `docs/methodology.md` rendered as `/methodology` on the site.
 - `docs/selection-log.md` rendered or linked from `/methodology`.
+- `sitemap.xml` resolves; OpenGraph preview renders correctly on at least one social platform check.
 
 **Prediction:** full scaffold + render + deploy = 6–12 hrs if the schema is stable and data is clean. If >12 hrs: the 25 JSON files have schema drift — go back and fix.
 
@@ -113,15 +117,17 @@ Grow to the critical-mass content level and get external eyes on it.
 **Deliverables:**
 - 25 more promises (50 total).
 - Analytics (Plausible or Umami — not Google Analytics).
-- Soft launch: Hacker News, Indian tech Twitter/Bluesky, 5 direct emails to Indian tech journalists, 3 to political scientists (Indian elections).
+- Soft launch executed per `docs/launch-checklist.md` (specific channels, contact lists, timing — kept out of PLAN.md to avoid tactic-level drift).
 - GitHub issues link visible on every page.
+- One volunteer second coder identified for a 10% sub-sample (5 promises) IRR check (D08 / SC#7 prerequisite for academic defensibility).
 
 **Exit criteria (falsifiable):**
 - 50 entries meet SC#10.
 - SC#3 and SC#4 still pass at n=50.
+- SC#6 (update discipline) in effect: no live promise has `last_verified` >180 days unflagged.
 - Analytics deployed.
-- Launch posts made (log URLs in `docs/external-uptake.md`).
-- First 500 unique visitors reached (visitor count, not engagement — engagement is Phase 6's problem).
+- Launch executed (contact log + post URLs recorded in `docs/external-uptake.md`).
+- Visitor count reported (not exit-blocking; SC#9 is what gates Phase 6).
 
 ---
 

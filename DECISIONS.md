@@ -61,7 +61,7 @@ Pre-registered decisions, predictions, and stop conditions. **Append-only. No ed
 - CodeForAfrica's enum (`Complete`, `In Progress`, `Stalled`, `Behind Schedule`, `Inconclusive`, `Unstarted`). Rejected: less widely recognized; similar structure to PolitiFact.
 - Binary (kept/broken only). Rejected: most promises are partial or in-progress; binary loses signal.
 **Prediction:** Users will understand the 6-state model faster than the original custom one. ≥50% of BJP 2014 promises will land in `compromise` or `in_progress` (not `kept`/`broken`).
-**Falsification:** If after Phase 3 (25 promises) fewer than 10% are `compromise`/`in_progress`, the scheme is being used as binary by the coder.
+**Falsification:** If after Phase 3 (25 promises) fewer than 15% are `compromise` (matching SC#3 threshold), the scheme is being used as binary by the coder.
 **Stop:** If feedback shows the categories are confusing, revise before scaling beyond 25 promises.
 **Dependencies:** D02.
 **Review:** Phase 3 exit.
@@ -133,6 +133,44 @@ Pre-registered decisions, predictions, and stop conditions. **Append-only. No ed
 **Stop:** If any phase exit becomes permanently unachievable (e.g., contamination probe script cannot be built), re-open the criterion for revision via new DECISIONS entry.
 **Dependencies:** D06.
 **Review:** After Phase 1 exit — confirm tightened criteria were feasible.
+
+---
+
+## D08: Audit-driven hardening — adversarial self-recoding, verdict-confidence rubric, contamination-probe spec
+**Date:** 2026-05-01
+**Phase:** Phase 0 (closing) / Phase 1 (opening)
+**Decision:** Apply three audit-driven fixes before Phase 1 data work begins:
+
+1. **Adversarial self-recoding (strengthens SC#7).** Before publishing a promise, the coder waits ≥7 days, then re-codes from scratch (no access to original draft). The original-vs-recode agreement is logged in `provenance.self_recode_agreement` (boolean) and `provenance.self_recode_date`. Per-cohort agreement rate is reported as a single-coder κ analog. Not equivalent to inter-coder κ but produces a reproducibility statistic.
+2. **`verdict_confidence` rubric.** Defined in promise-schema.md:
+   - `high` — ≥3 Tier-1 sources directly support the verdict; no contested interpretation among consulted sources.
+   - `medium` — 1–2 Tier-1 sources OR contested interpretation among Tier-1 sources OR a key sub-claim relies on Tier-2.
+   - `low` — Tier-1 evidence is partial or indirect; verdict requires inference; Tier-2/3 supplement is load-bearing.
+   - Confidence below `medium` MUST have `nuance` filled with the counter-case (already enforced by SC#5).
+3. **Contamination-probe specification.**
+   - **Model:** `claude-haiku-4-5` (cheap, sufficient for closed-book recall test).
+   - **Prompt:** *"You are answering from your own training only. No external sources. Question: {promise text rephrased as 'Has X been done?'}. State: (a) verdict from your training (kept/broken/partial/unknown), (b) approximate confidence, (c) any specific facts you recall. Do not refuse."*
+   - **Threshold:** if the model returns a non-`unknown` verdict with any specific fact (date, number, name) → flag as contaminated for that promise.
+   - **Trigger on contamination:** the drafting prompt for that promise must explicitly forbid use of parametric knowledge — *"Use ONLY the sources provided below. If a source does not state X, do not assert X."* Probe output is logged in `provenance.contamination_probe`.
+
+**Alternatives considered:**
+- Skip self-recoding, rely on git history alone (rejected: not a reliability statistic, no academic defensibility).
+- Recruit a second coder for full IRR (rejected for now: costly, no volunteer identified; revisit at Phase 5 prerequisite).
+- Use a stronger model (sonnet/opus) for contamination probe (rejected: haiku is sufficient for the recall question; cheaper, faster).
+- Deterministic confidence rubric (e.g., score-based) (rejected: judgment is unavoidable in verdict adjudication; the rubric anchors it).
+
+**Prediction (falsifiable):**
+- ≥80% self-recode agreement on a 5-promise pilot. If <80%, the verdict-confidence rubric is too vague or the schema fields are ambiguous.
+- ~30–50% of high-profile promises (GST, OROP, demonetization, Swachh Bharat, Make in India) will fail the contamination probe — frontier and small models alike have memorized the major outcomes. Forcing source-grounded drafting on these is non-optional.
+
+**Falsification:**
+- If contamination probe never flags any promise → either threshold is too strict or sample is too narrow; review.
+- If self-recode agreement is consistently 100% → coder is anchoring on memory of original draft; mandate longer wait or coding-rubric only re-encoding.
+
+**Stop:** If self-recoding adds >2 hours per promise (the wait is free, the re-encoding is the cost), workflow is unsustainable; consider dropping to 5% sub-sample re-coding instead of every entry.
+
+**Dependencies:** D02, D06, D07.
+**Review:** End of Phase 2 (after 2 promises with full self-recode cycle).
 
 ---
 

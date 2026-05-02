@@ -100,12 +100,13 @@ Firm, falsifiable, grounded in [research-synthesis.md](research-synthesis.md). E
 
 | Mitigation | Mechanism | Falsifiable check |
 |---|---|---|
+| **Adversarial self-recoding (D08)** | Before publishing, the coder waits ≥7 days, then re-codes the promise from scratch with no access to the original draft. Agreement is logged. | `provenance.self_recode_date` set ≥7 days after `provenance.drafted_by` log; `provenance.self_recode_agreement` is a boolean; per-cohort agreement rate reported. |
 | **Self-challenge** | Before publishing, write the counter-case in `nuance`: "A reasonable critic would argue this is [different verdict] because [X]." | Every `verdict_confidence: high` entry with contested framing must have a `nuance` containing the counter-case. |
 | **External correction channel** | Public GitHub issues, linked from every page. | Exists, monitored, responses logged. |
 | **Git-preserved history** | Every verdict change is a commit with a message stating the evidence that prompted the change. | `git log` on a promise file shows rationale per change. |
 | **Periodic re-coding** | Every 6 months, re-verify all verdicts as if a new coder. `review_count` increments; rationale documented. | Review cycle runs on schedule; if 6+ months pass with no re-code, flagged as stale. |
 
-This is our invention — not in the literature. If the project publishes methodology, this mitigation protocol becomes its own small contribution (disclosed in PAPER_NOTES.md).
+The adversarial self-recoding mechanism produces a single-coder κ analog (not equivalent to inter-coder κ but reproducible). Recruiting a volunteer second coder for a 10% sub-sample is a Phase 5 prerequisite to obtain a real κ on a small sample. This protocol is our invention; if the project publishes methodology, it becomes its own contribution (disclosed in PAPER_NOTES.md).
 
 ---
 

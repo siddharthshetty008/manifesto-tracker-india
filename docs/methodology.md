@@ -75,7 +75,7 @@ All evidence is classified:
 
 ## Known limitations (honest disclosure)
 
-- **Single coder.** This project has one human verifier. Inter-coder reliability (κ) is not measured. The [Comparative Pledges Project](https://comparativepledges.net/publications/) recommends ≥2 independent coders with κ ≥ 0.6. Where possible, contested verdicts are flagged in `outcome.nuance`.
+- **Single coder.** This project has one human verifier. Full inter-coder reliability (κ) is not measured. The [Comparative Pledges Project](https://comparativepledges.net/publications/) standard requires ≥2 independent coders with Cohen's κ ≥ 0.7. As a partial substitute (D08), every promise undergoes adversarial self-recoding: the coder waits ≥7 days, then re-codes from scratch with no access to the original draft. Per-cohort agreement rate is reported as a single-coder κ analog. Contested verdicts are flagged in `outcome.nuance`. A volunteer second coder for a 10% sub-sample is a Phase 5 prerequisite to obtain a real κ on a small sample.
 - **Single-language source reading.** Verdicts rely on English-language sources. Regional-language coverage may miss nuance.
 - **Subjective selection.** Which of the 581 BJP 2014 promises get tracked first is based on the maintainer's judgment of importance. Correction emails welcome.
 - **Ongoing data.** The BJP has held power 2014–present. Some promises remain `in_progress` indefinitely; verdict transitions continue.
